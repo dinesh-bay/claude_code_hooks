@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/prompt-sensitive-data-audit.ps1",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

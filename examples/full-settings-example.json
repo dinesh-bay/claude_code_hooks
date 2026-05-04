@@ -1,0 +1,266 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "name": "Hook #1 — Block Destructive Commands",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/block-destructive-commands.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #2 — Critical File Guard (Write)",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/critical-file-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #2 — Critical File Guard (Edit)",
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/critical-file-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #3 — Large File Overwrite Guard",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/large-file-overwrite-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #4 — Scope Boundary Guard (Write)",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/scope-boundary-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #4 — Scope Boundary Guard (Edit)",
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/scope-boundary-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #5 — Secret Scanner",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/secret-scanner.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #6 — Uncommitted Work Guard",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/uncommitted-work-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #7 — Branch Protection",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/branch-protection.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #8 — Dependency Change Guard (Write)",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/dependency-change-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #8 — Dependency Change Guard (Edit)",
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/dependency-change-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #11 — Dangerous Interpreter Guard",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/dangerous-interpreter-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #12 — Test File Deletion Guard",
+        "matcher": "Bash|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/test-file-deletion-guard.ps1",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "name": "Hook #10 — Mass Change Detector",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/mass-change-detector.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #16 — Copy File Path to Clipboard",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/copy-file-path-clipboard.ps1",
+            "timeout": 5,
+            "async": true
+          }
+        ]
+      },
+      {
+        "name": "Hook #17 — Auto-Format on Save",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/auto-format-on-save.ps1",
+            "timeout": 15,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "name": "Hook #9 — Pre-Compact Backup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/pre-compact-backup.ps1",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "name": "Hook #13 — Sound on Completion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"[System.Media.SystemSounds]::Exclamation.Play()\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #14 — Desktop Toast",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/desktop-toast.ps1",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "name": "Hook #10 — Mass Change Detector Cleanup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/mass-change-detector-cleanup.ps1",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "name": "Hook #18 — Session Context Loader",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/session-context-loader.ps1",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "name": "Hook #15 — Session Summary on Exit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/session-summary-on-exit.ps1",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "name": "Hook #19 — Prompt Sensitive Data Audit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/prompt-sensitive-data-audit.ps1",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
