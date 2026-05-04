@@ -52,7 +52,7 @@ Already familiar? Browse the catalog below and copy what you need.
 
 ## The Catalog
 
-18 hooks organized by what they protect.
+19 hooks organized by what they protect.
 
 ### Safety
 
@@ -96,6 +96,12 @@ Already familiar? Browse the catalog below and copy what you need.
 | 16 | [Copy File Path to Clipboard](hooks/productivity/16-copy-file-path-to-clipboard/) | PostToolUse | Starter | Copies the path of any created/edited file to your clipboard |
 | 17 | [Auto-Format on Save](hooks/productivity/17-auto-format-on-save/) | PostToolUse | Intermediate | Runs Prettier or Black automatically after Claude writes a file |
 | 18 | [Session Context Loader](hooks/productivity/18-session-context-loader/) | SessionStart | Intermediate | Injects current git branch, recent commits, and project state at session start |
+
+### Input Guard
+
+| # | Hook | Event | Difficulty | Description |
+|---|------|-------|------------|-------------|
+| 19 | [Prompt Sensitive Data Audit](hooks/input-guard/19-prompt-sensitive-data-audit/) | UserPromptSubmit | Intermediate | Scans your messages for accidentally pasted secrets |
 
 ### Bonus
 
