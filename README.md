@@ -244,18 +244,18 @@ When your hook fires, Claude Code pipes a JSON object to your script's stdin. Th
 
 ```json
 {
-  "session_id": "d641f6ac-0708-452e-9a01-22c8a866bfc4",
-  "transcript_path": "C:\\Users\\gudinesh\\.claude\\projects\\...\\d641f6ac.jsonl",
-  "cwd": "C:\\Users\\gudinesh",
+  "session_id": "a1b2c3d4-0708-452e-9a01-22c8a866bfc4",
+  "transcript_path": "C:\\Users\\YOUR_USERNAME\\.claude\\projects\\...\\a1b2c3d4.jsonl",
+  "cwd": "C:\\Users\\YOUR_USERNAME",
   "hook_event_name": "PostToolUse",
   "tool_name": "Write",
   "tool_input": {
-    "file_path": "C:\\Users\\gudinesh\\test_hook_output.txt",
+    "file_path": "C:\\Users\\YOUR_USERNAME\\my-project\\output.txt",
     "content": "Hook test attempt.\n"
   },
   "tool_response": {
     "type": "create",
-    "filePath": "C:\\Users\\gudinesh\\test_hook_output.txt"
+    "filePath": "C:\\Users\\YOUR_USERNAME\\my-project\\output.txt"
   },
   "tool_use_id": "toolu_016CDLAkTZXvGEgpcjqWCVtK",
   "duration_ms": 21

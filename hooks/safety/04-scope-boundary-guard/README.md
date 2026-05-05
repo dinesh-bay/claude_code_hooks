@@ -94,7 +94,7 @@ You should see a block message:
 ```
 BLOCKED: Operation targets a file outside your project.
   Target: C:\Users\test\outside-project.txt
-  Project: C:\Users\gudinesh\your-project
+  Project: C:\Users\YOUR_USERNAME\your-project
 If intentional, run it manually or use additionalDirectories in settings.
 ```
 
@@ -109,8 +109,8 @@ If you legitimately need Claude to write to files outside the project (e.g., a s
 
 ```powershell
 $allowedDirs = @(
-    "C:\Users\gudinesh\shared-configs",
-    "C:\Users\gudinesh\.config"
+    "C:\Users\YOUR_USERNAME\shared-configs",
+    "C:\Users\YOUR_USERNAME\.config"
 )
 
 foreach ($dir in $allowedDirs) {
