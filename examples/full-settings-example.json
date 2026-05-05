@@ -180,6 +180,16 @@
             "async": true
           }
         ]
+      },
+      {
+        "name": "Hook #20 — Context Saver",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/context-saver.ps1",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "PreCompact": [

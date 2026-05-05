@@ -32,7 +32,7 @@ Already familiar? Browse the catalog below and copy what you need.
 
 ## The Catalog
 
-19 hooks organized by what they protect.
+20 hooks organized by what they protect.
 
 ### Safety
 
@@ -83,6 +83,12 @@ Already familiar? Browse the catalog below and copy what you need.
 |---|------|------------|-------------|
 | 19 | [Prompt Sensitive Data Audit](hooks/input-guard/19-prompt-sensitive-data-audit/) | Intermediate | Scans your messages for accidentally pasted secrets |
 
+### Context
+
+| # | Hook | Difficulty | Description |
+|---|------|------------|-------------|
+| 20 | [Context Saver](hooks/context/20-context-saver/) | Intermediate | Saves conversation summary when context exceeds 70% |
+
 ### Bonus
 
 **[Manual Backup](companion-scripts/manual-backup/)** -- Run before `/clear` to save your transcript. `/clear` has no hook event, so this is a manual workaround.
@@ -96,6 +102,20 @@ Already familiar? Browse the catalog below and copy what you need.
 **Alternative:** Bash (macOS/Linux) `.sh` scripts included in every hook folder.
 
 Both versions are functionally identical.
+
+## Which Hooks Do I Need?
+
+You don't need all 20. Start small:
+
+| Preset | Hooks | Best for |
+|--------|-------|----------|
+| **Starter** | #1, #7, #13 | Everyone -- install these first |
+| **Safe Default** | #1, #2, #5, #6, #7, #13 | Daily users -- best protection-to-performance ratio |
+| **QA / Tester** | Safe Default + #12, #19, #20 | Test-focused teams |
+| **Team** | Safe Default + #3, #8, #10, #15, #18, #20 | Shared codebases |
+| **Everything** | All 20 (use [combined script](optimized/)) | Maximum protection |
+
+Full guide with performance numbers: **[docs/which-hooks-do-i-need.md](docs/which-hooks-do-i-need.md)**
 
 ## Contributing
 
