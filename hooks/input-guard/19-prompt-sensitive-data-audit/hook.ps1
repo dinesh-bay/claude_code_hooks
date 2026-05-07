@@ -1,14 +1,7 @@
-# hook.ps1 — Prompt Sensitive Data Audit
-# Event: UserPromptSubmit | Matcher: none
-# Exit 0 = allow, Exit 2 = block (stderr shown to user)
-
 $raw = [Console]::In.ReadToEnd()
 $json = $raw | ConvertFrom-Json
+$prompt = $json.prompt
 
-# UserPromptSubmit may have the prompt in different fields — try common ones
-$prompt = $json.tool_input.prompt
-if (-not $prompt) { $prompt = $json.message }
-if (-not $prompt) { $prompt = $json.content }
 if (-not $prompt) { exit 0 }
 
 $patterns = @(

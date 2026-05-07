@@ -134,16 +134,19 @@ Set-Content -Path $saveFile -Value $summary -Encoding UTF8
 # Create flag file
 New-Item -Path $flagFile -ItemType File -Force | Out-Null
 
-# Windows balloon notification
+# Copy full path to clipboard
+Set-Clipboard -Value $saveFile
+
+# Windows balloon notification with full path
 try {
     Add-Type -AssemblyName System.Windows.Forms
     $notify = New-Object System.Windows.Forms.NotifyIcon
     $notify.Icon = [System.Drawing.SystemIcons]::Information
     $notify.Visible = $true
     $notify.ShowBalloonTip(
-        3000,
+        5000,
         "Claude Code - Context Saver",
-        "Context at ~${contextPercent}%. Conversation saved to ${datePrefix}_${dirName}.md",
+        "Context at ~${contextPercent}%. Saved to:`n$saveFile`n`nPath copied to clipboard.",
         [System.Windows.Forms.ToolTipIcon]::Info
     )
     Start-Sleep -Milliseconds 500

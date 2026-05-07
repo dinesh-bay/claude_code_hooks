@@ -1,11 +1,12 @@
 {
   "hooks": {
-    "Notification": [
+    "Stop": [
       {
         "hooks": [
           {
             "type": "command",
             "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/Users/YOUR_USERNAME/.claude/hooks/desktop-toast.ps1",
+            "shell": "bash",
             "timeout": 5
           }
         ]
